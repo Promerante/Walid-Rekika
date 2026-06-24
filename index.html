@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walid - Intermediario de Productos Médicos</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial, sans-serif;
+  background:#f4f8fb;
+  color:#1d2b36;
+}
+.header{
+  background:linear-gradient(135deg,#0f6b78,#1aa6b7);
+  color:white;
+  padding:70px 20px;
+  text-align:center;
+}
+.header h1{font-size:42px;margin-bottom:15px}
+.header p{font-size:20px}
+.container{max-width:1200px;margin:auto;padding:40px 20px}
+.intro{
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  line-height:1.8;
+  font-size:18px;
+}
+.email{
+  margin-top:25px;
+  font-size:20px;
+  font-weight:bold;
+  color:#0f6b78;
+  text-align:center;
+}
+.section-title{
+  margin:50px 0 25px;
+  text-align:center;
+  font-size:32px;
+  color:#0f6b78;
+}
+.carousel-wrapper{
+  position:relative;
+  overflow:hidden;
+  margin-bottom:40px;
+}
+.carousel{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding:15px 5px;
+}
+.carousel::-webkit-scrollbar{display:none}
+.card{
+  min-width:240px;
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.1);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-6px)}
+.icon{
+  height:120px;
+  border-radius:15px;
+  background:linear-gradient(135deg,#e8f8fb,#d1eef3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:55px;
+  margin-bottom:20px;
+}
+.card h3{
+  font-size:18px;
+  color:#12343b;
+}
+.btns{
+  text-align:center;
+  margin-top:15px;
+}
+button{
+  background:#0f6b78;
+  color:white;
+  border:none;
+  padding:12px 18px;
+  border-radius:50px;
+  cursor:pointer;
+  margin:5px;
+  font-size:18px;
+}
+button:hover{background:#1aa6b7}
+.footer{
+  text-align:center;
+  background:#12343b;
+  color:white;
+  padding:30px;
+  margin-top:40px;
+}
+.product-image{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+@media(max-width:600px){
+  .header h1{font-size:30px}
+  .card{min-width:210px}
+}
+</style>
+</head>
+
+<body>
+
+<section class="header">
+  <h1>Walid</h1>
+  <p>Intermediario de consumibles y material médico entre Argelia y España</p>
+</section>
+
+<div class="container">
+
+  <div class="intro">
+    <p>
+      Walid desempeña el papel de intermediario entre Argelia y España en el ámbito de los consumibles y el material médico. 
+      Se encarga de poner en contacto a proveedores en Argelia con establecimientos y empresas españolas, facilitando los intercambios comerciales, coordinando los procesos de aprovisionamiento y velando por el cumplimiento de los requisitos técnicos y normativos aplicables.
+    </p>
+    <br>
+    <p>
+      Gracias a su conocimiento de ambos mercados, contribuye a garantizar el acceso a equipos y consumibles médicos de calidad, 
+      en las mejores condiciones de coste, calidad y plazo de entrega.
+    </p>
+    <div class="email">Email: Rekikawalid2@gmail.com</div>
+  </div>
+
+  <h2 class="section-title">Productos médicos y consumibles</h2>
+
+  <div class="carousel-wrapper">
+    <div class="carousel" id="carousel1">
+      <div class="card"> <img src="imagenes/tensiometro.webp"  class="product-image"><h3>Tensiómetro</h3></div>
+      <div class="card"> <img src="imagenes/sacaleches.webp" alt="Sacaleches" class="product-image"><h3>Sacaleches</h3></div>
+      <div class="card"> <img src="imagenes/ventosas.webp" alt="Ventosas para hiyama" class="product-image"><h3>Ventosas para hiyama</h3></div>
+      <div class="card"> <img src="imagenes/bajalenguas.webp" alt="Bajalenguas" class="product-image"><h3>Bajalenguas</h3></div>
+      <div class="card"> <img src="imagenes/aerosoles.webp" alt="Aerosoles / Nebulizadores" class="product-image"><h3>Aerosoles / Nebulizadores</h3></div>
+      <div class="card"> <img src="imagenes/equipo_laser.webp" alt="Equipo láser" class="product-image"><h3>Equipo láser</h3></div>
+      <div class="card"> <img src="imagenes/termometro.webp" alt="Termómetro" class="product-image"><h3>Termómetro</h3></div>
+      <div class="card"> <img src="imagenes/bascula.webp" alt="Báscula para personas" class="product-image"><h3>Báscula para personas</h3></div>
+    </div>
+    <div class="btns">
+      <button onclick="moveCarousel('carousel1',-260)">‹</button>
+      <button onclick="moveCarousel('carousel1',260)">›</button>
+    </div>
+  </div>
+
+  <div class="carousel-wrapper">
+    <div class="carousel" id="carousel2">
+      <div class="card"> <img src="imagenes/baston.webp" alt="Bastón" class="product-image"><h3>Bastón</h3></div>
+      <div class="card"> <img src="imagenes/silla_ruedas.webp" alt="Silla de ruedas" class="product-image"><h3>Silla de ruedas</h3></div>
+      <div class="card"> <img src="imagenes/andador.webp" alt="Andador" class="product-image"><h3>Andador</h3></div>
+      <div class="card"> <img src="imagenes/muletas.webp" alt="Muletas" class="product-image"><h3>Muletas</h3></div>
+      <div class="card"> <img src="imagenes/aguja_acupuntura.webp" alt="Agujas de acupuntura" class="product-image"><h3>Agujas de acupuntura</h3></div>
+      <div class="card"> <img src="imagenes/palitos_cabello.webp" alt="Palitos para el cabello" class="product-image"><h3>Palitos para el cabello</h3></div>
+      <div class="card"> <img src="imagenes/gasa_parafinada.webp" alt="Gasa parafinada" class="product-image"><h3>Gasa parafinada</h3></div>
+      <div class="card"> <img src="imagenes/Surgicelhemostatico.webp" alt="Surgicel hemostático" class="product-image"><h3>Surgicel hemostático</h3></div>
+      <div class="card"> <img src="imagenes/hojas_bisturi.webp" alt="Hojas de bisturí" class="product-image"><h3>Hojas de bisturí</h3></div>
+    </div>
+    <div class="btns">
+      <button onclick="moveCarousel('carousel2',-260)">‹</button>
+      <button onclick="moveCarousel('carousel2',260)">›</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Contacto profesional para intermediación de productos médicos entre Argelia y España</p>
+  <p>Rekikawalid2@gmail.com</p>
+</div>
+
+<script>
+function moveCarousel(id, distance){
+  document.getElementById(id).scrollBy({
+    left: distance,
+    behavior: 'smooth'
+  });
+}
+</script>
+
+</body>
+</html>
