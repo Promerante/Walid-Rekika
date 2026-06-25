@@ -13,13 +13,114 @@ body{
   color:#1d2b36;
 }
 .header{
-  background:linear-gradient(135deg,#0f6b78,#1aa6b7);
+  position:relative;
+  min-height:520px;
+  background:
+    linear-gradient(90deg,rgba(4,37,51,.92),rgba(7,101,116,.75),rgba(255,255,255,.15)),
+    url("https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1600&q=80");
+  background-size:cover;
+  background-position:center;
   color:white;
-  padding:70px 20px;
-  text-align:center;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
 }
-.header h1{font-size:42px;margin-bottom:15px}
-.header p{font-size:20px}
+
+.header-overlay{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at right,rgba(26,166,183,.25),transparent 45%);
+}
+
+.header-content{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+  width:100%;
+  margin:auto;
+  padding:50px 25px;
+  display:flex;
+  align-items:center;
+  gap:50px;
+}
+
+.logo-box{
+  background:rgba(0,36,52,.85);
+  padding:25px 30px;
+  border-radius:0 0 45px 0;
+  box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.logo-box img{
+  width:300px;
+  max-width:100%;
+  display:block;
+}
+
+.hero-text{
+  max-width:650px;
+}
+
+.hero-text h1{
+  font-size:54px;
+  line-height:1.1;
+  margin-bottom:18px;
+}
+
+.hero-text p{
+  font-size:22px;
+  margin-bottom:28px;
+}
+
+.hero-icons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.hero-icons div{
+  background:rgba(255,255,255,.14);
+  backdrop-filter:blur(8px);
+  padding:13px 18px;
+  border-radius:50px;
+  font-size:15px;
+  font-weight:bold;
+}
+
+.hero-btn{
+  display:inline-block;
+  background:#11b8c9;
+  color:white;
+  text-decoration:none;
+  padding:15px 28px;
+  border-radius:50px;
+  font-weight:bold;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.hero-btn:hover{
+  background:#0f6b78;
+}
+
+@media(max-width:800px){
+  .header-content{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .hero-text h1{
+    font-size:38px;
+  }
+
+  .hero-text p{
+    font-size:18px;
+  }
+
+  .logo-box img{
+    width:230px;
+  }
+}
 .container{max-width:1200px;margin:auto;padding:40px 20px}
 .intro{
   background:white;
@@ -112,16 +213,224 @@ button:hover{background:#1aa6b7}
   .header h1{font-size:30px}
   .card{min-width:210px}
 }
+/* ANIMACIONES PROFESIONALES */
+
+/* Entrada del logo */
+.logo-box{
+  animation: logoEntry 1s ease forwards;
+}
+
+@keyframes logoEntry{
+  from{
+    opacity:0;
+    transform:translateX(-35px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+/* Entrada del texto principal */
+.hero-text{
+  animation: textEntry 1.1s ease forwards;
+}
+
+@keyframes textEntry{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Brillo elegante sobre el header */
+.header::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-180px;
+  width:130px;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.20),transparent);
+  animation: shine 6s infinite;
+  z-index:1;
+}
+
+@keyframes shine{
+  0%{left:-180px}
+  55%{left:110%}
+  100%{left:110%}
+}
+
+/* Chips del header con movimiento suave */
+.hero-icons div{
+  transition:.35s ease;
+}
+
+.hero-icons div:hover{
+  transform:translateY(-4px);
+  background:rgba(255,255,255,.22);
+}
+
+/* Email atractivo */
+.email{
+  transition:.35s ease;
+}
+
+.email:hover{
+  color:#11d9ee;
+  transform:translateY(-2px);
+}
+
+/* Tarjetas de productos */
+.card{
+  transition:.35s ease;
+  overflow:hidden;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(0,0,0,.16);
+}
+
+.product-image{
+  transition:.35s ease;
+}
+
+.card:hover .product-image{
+  transform:scale(1.06);
+}
+
+/* Botones del carrusel */
+button{
+  transition:.3s ease;
+}
+
+button:hover{
+  background:#1aa6b7;
+  transform:scale(1.08);
+}
+
+/* Aparición suave de bloques al cargar */
+.intro,
+.section-title,
+.carousel-wrapper{
+  animation: fadeUp .9s ease both;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes logoEntry{
+  from{
+    opacity:0;
+    transform:translateX(-30px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+/* Brillo elegante en el header */
+.top-header::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-150px;
+  width:120px;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
+  animation: shine 5s infinite;
+  z-index:1;
+}
+
+@keyframes shine{
+  0%{left:-150px}
+  60%{left:100%}
+  100%{left:100%}
+}
+
+/* Banderas con movimiento suave */
+.flags span{
+  display:inline-block;
+  animation: floatFlag 3s ease-in-out infinite;
+}
+
+.flags span:nth-child(2){
+  animation-delay:.4s;
+}
+
+@keyframes floatFlag{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-4px)}
+}
+
+/* Email más atractivo */
+.email{
+  transition:.3s;
+}
+
+.email:hover{
+  color:#11d9ee;
+  transform:translateY(-2px);
+}
+
+/* Productos con efecto profesional */
+.card{
+  transition:.35s ease;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(0,0,0,.16);
+}
+
+.card img{
+  transition:.35s ease;
+}
+
+.card:hover img{
+  transform:scale(1.06);
+}
 </style>
 </head>
 
 <body>
 
 <section class="header">
-  <h1>Walid</h1>
-  <p>Intermediario de consumibles y material médico entre Argelia y España</p>
-</section>
+  <div class="header-overlay"></div>
 
+  <div class="header-content">
+    <div class="logo-box">
+      <img src="imagenes/logo-walid.png" alt="Walid Intermediario de Productos Médicos">
+    </div>
+
+    <div class="hero-text">
+      <h1>Conectando Argelia y España</h1>
+      <p>Intermediación profesional en consumibles y material médico</p>
+
+      <div class="hero-icons">
+        <div>🤝 Intermediación de confianza</div>
+        <div>🌍 Conocimiento de ambos mercados</div>
+        <div>✅ Calidad, coste y plazo garantizados</div>
+      </div>
+
+    </div>
+  </div>
+</section>
 <div class="container">
 
   <div class="intro">
@@ -188,6 +497,30 @@ function moveCarousel(id, distance){
     behavior: 'smooth'
   });
 }
+
+/* Carrusel automático suave */
+function autoCarousel(id){
+  const carousel = document.getElementById(id);
+
+  setInterval(() => {
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+    if(carousel.scrollLeft >= maxScroll - 10){
+      carousel.scrollTo({
+        left: 0,
+        behavior: 'smooth'
+      });
+    }else{
+      carousel.scrollBy({
+        left: 260,
+        behavior: 'smooth'
+      });
+    }
+  }, 3500);
+}
+
+autoCarousel('carousel1');
+autoCarousel('carousel2');
 </script>
 
 </body>
