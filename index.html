@@ -196,11 +196,129 @@ button{
 }
 button:hover{background:#1aa6b7}
 .footer{
-  text-align:center;
-  background:#12343b;
-  color:white;
-  padding:30px;
-  margin-top:40px;
+
+    margin-top:70px;
+
+    background:linear-gradient(135deg,#08293b,#0f6b78);
+
+    color:white;
+
+    padding:45px 30px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:50px;
+
+    flex-wrap:wrap;
+
+    box-shadow:0 -10px 25px rgba(0,0,0,.15);
+
+}
+
+.footer-logos{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+.footer-logos img{
+
+    height:80px;
+
+    background:white;
+
+    padding:10px;
+
+    border-radius:12px;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+.footer-logos img:hover{
+
+    transform:translateY(-6px) scale(1.05);
+
+}
+
+.footer-text{
+
+    max-width:700px;
+
+}
+
+.footer-text h3{
+
+    color:#45d5e8;
+
+    margin-bottom:12px;
+
+    font-size:24px;
+
+}
+
+.footer-text p{
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+
+}
+
+.footer-email{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.12);
+
+    padding:12px 22px;
+
+    border-radius:40px;
+
+    font-weight:bold;
+
+    transition:.35s;
+
+}
+
+.footer-email:hover{
+
+    background:rgba(255,255,255,.22);
+
+}
+
+@media(max-width:800px){
+
+.footer{
+
+    text-align:center;
+
+}
+
+.footer-logos{
+
+    justify-content:center;
+
+}
+
+.footer-logos img{
+
+    height:65px;
+
+}
+
 }
 .product-image{
     width:100%;
@@ -486,8 +604,33 @@ button:hover{
 </div>
 
 <div class="footer">
-  <p>Contacto profesional para intermediación de productos médicos entre Argelia y España</p>
-  <p>Rekikawalid2@gmail.com</p>
+
+    <div class="footer-logos">
+
+        <img src="imagenes/logoAndalucia.png"
+             alt="Junta de Andalucía">
+
+        <img src="imagenes/logoEuropa.webp"
+             alt="Unión Europea">
+
+    </div>
+
+    <div class="footer-text">
+
+        <h3>Proyecto subvencionado</h3>
+
+        <p>
+            Esta actividad empresarial corresponde a las
+            <strong>Subvenciones para el Fomento del Trabajo Autónomo en Andalucía:
+            Línea 2. Inicio de Actividad.</strong>
+        </p>
+
+        <div class="footer-email">
+            Rekikawalid2@gmail.com
+        </div>
+
+    </div>
+
 </div>
 
 <script>
